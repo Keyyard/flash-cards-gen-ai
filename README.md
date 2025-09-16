@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flash Card Generator
+
+An AI-powered flash card generation and review system built with Next.js.
+
+## Features
+
+- 🤖 AI-generated flash cards from uploaded documents
+- 🔐 OAuth authentication (GitHub, Facebook, Google)
+- 📚 Spaced repetition learning system
+- 💾 Local storage for offline use
+- 📊 Progress tracking and statistics
+- 🎯 Difficulty-based card scheduling
 
 ## Getting Started
 
-First, run the development server:
+### Development Mode (No Auth)
+
+By default, the app runs in development mode without authentication:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development Mode with Auth
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run with authentication enabled in development:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+FORCE_AUTH=true npm run dev
+```
 
-## Learn More
+### Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file with your OAuth credentials:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+# NextAuth
+NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_URL=http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# GitHub OAuth
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
 
-## Deploy on Vercel
+# Facebook OAuth
+FACEBOOK_CLIENT_ID=your-facebook-client-id
+FACEBOOK_CLIENT_SECRET=your-facebook-client-secret
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Google OAuth
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# OpenAI
+OPENAI_API_KEY=your-openai-api-key
+```
+
+## Usage
+
+1. Upload a document (TXT, PDF, DOCX)
+2. AI generates 20-25 flash cards
+3. Review cards and rate difficulty
+4. Cards are scheduled using spaced repetition
+5. Track your progress in statistics
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Authentication**: NextAuth.js
+- **AI**: OpenAI API
+- **Storage**: LocalStorage (client-side)
+- **File Processing**: Support for text, PDF, and DOCX files
