@@ -4,12 +4,19 @@ An AI-powered flash card generation and review system built with Next.js.
 
 ## Features
 
-- 🤖 AI-generated flash cards from uploaded documents
-- 🔐 OAuth authentication (GitHub, Facebook, Google)
-- 📚 Spaced repetition learning system
-- 💾 Local storage for offline use
-- 📊 Progress tracking and statistics
-- 🎯 Difficulty-based card scheduling
+- AI-generated flash cards from uploaded documents
+- OAuth authentication (GitHub, Facebook, Google)
+- Spaced repetition learning system
+- Local storage for offline use
+- Progress tracking and statistics
+- Difficulty-based card scheduling
+
+## Screenshots
+
+| | | |
+|---|---|---|
+| ![Screenshot 1](assets/1.png) | ![Screenshot 2](assets/2.png) | ![Screenshot 3](assets/3.png) |
+| ![Screenshot 4](assets/4.png) | ![Screenshot 5](assets/5.png) | ![Screenshot 6](assets/6.png) |
 
 ## Getting Started
 
